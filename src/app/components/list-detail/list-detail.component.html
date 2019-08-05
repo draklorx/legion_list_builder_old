@@ -1,0 +1,45 @@
+<header class="app">
+    <input class="list-name" type="text" [(ngModel)]="list.name">
+    <button class="close" [routerLink]="['/']">X</button>
+</header>
+
+<section class="rank" *ngFor="let rank of ranks">
+    <h2>{{rank.fields.name}}</h2>
+    <button (click)="addUnit(rank.fields.name)">Add</button>
+</section>
+
+<h2>Commanders</h2>
+<section class="unit" *ngFor="let unit of list.units.commanders">
+    {{ unit.name }}
+    {{ unit.points}}
+</section>
+
+<h2>Opperatives</h2>
+<section class="unit" *ngFor="let unit of list.units.opperatives">
+    {{ unit.name }}
+    {{ unit.points}}
+</section>
+
+<h2>Corps</h2>
+<section class="unit" *ngFor="let unit of list.units.corps">
+    {{ unit.name }}
+    {{ unit.points}}
+</section>
+
+<h2>Special Forces</h2>
+<section class="unit" *ngFor="let unit of list.units.special_forces">
+    {{ unit.name }}
+    {{ unit.points}}
+</section>
+
+<h2>Support</h2>
+<section class="unit" *ngFor="let unit of list.units.support">
+    {{ unit.name }}
+    {{ unit.points}}
+</section>
+
+<h2>Heavy</h2>
+<section class="unit" *ngFor="let unit of list.units.heavy">
+    {{ unit.name }}
+    {{ unit.points}}
+</section>

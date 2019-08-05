@@ -1,0 +1,33 @@
+<header class="app">
+    <h1>Lists</h1>
+    <button class="add" (click)="addList()">+</button>    
+</header>
+
+<section class="list" *ngFor="let list of lists; index as listId">
+    <a [routerLink]="['/lists', listId]">
+    <header>
+        <h2 class="name">{{ list.name }}</h2>
+        <h3 class="faction">{{ list.faction }}</h3>
+    </header>
+    <summary class="summary">
+        <span *ngFor="let unit of list.units.commanders; let isLast=last">
+        {{ unit.name }}{{ isLast ? '' : ', '}}
+        </span>
+        <span *ngFor="let unit of list.units.opperatives; let isLast=last">
+        , {{ unit.name }}
+        </span>
+        <span *ngFor="let unit of list.units.corps; let isLast=last">
+        , {{ unit.name }}
+        </span>
+        <span *ngFor="let unit of list.units.special_forces; let isLast=last">
+        , {{ unit.name }}
+        </span>
+        <span *ngFor="let unit of list.units.support; let isLast=last">
+        , {{ unit.name }}
+        </span>
+        <span *ngFor="let unit of list.units.heavy; let isLast=last">
+        , {{ unit.name }}
+        </span>
+    </summary>
+    </a>
+</section>
