@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router} from '@angular/router';
 import { lists } from '../../lists';
-import { FactionListComponent } from 'src/app/components/faction-list/faction-list.component';
+import { MatDialog, MatDialogConfig } from "@angular/material";
+import { FactionListComponent } from '../faction-list/faction-list.component';
 
 @Component({
   selector: 'app-list-list',
@@ -11,24 +11,12 @@ import { FactionListComponent } from 'src/app/components/faction-list/faction-li
 export class ListListComponent implements OnInit {
   lists = lists;
 
-  constructor(private router: Router) { 
+  constructor(private dialog: MatDialog) { }
+
+  chooseFaction() {
+    const dialogRef = this.dialog.open(FactionListComponent);
   }
 
-  addList() {
-    this.lists.push({
-      name: "New List",
-      faction: "Rebels",
-      units: {
-        commanders: [],
-        opperatives: [],
-        corps: [],
-        special_forces: [],
-        support: [],
-        heavy: []
-      }
-    });
-    this.router.navigate(['/lists', lists.length-1]);
-  }
   ngOnInit() {
   }
 

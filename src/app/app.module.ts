@@ -10,6 +10,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { UnitListComponent } from './components/unit-list/unit-list.component';
 import { FactionListComponent } from './components/faction-list/faction-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatIconModule, MatDialogModule, MatListModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { RankListComponent } from './components/rank-list/rank-list.component';
 
 @NgModule({
   declarations: [
@@ -17,19 +20,25 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ListDetailComponent,
     ListListComponent,
     UnitListComponent,
-    FactionListComponent
+    FactionListComponent,
+    RankListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
-  ],
-  entryComponents: [
-    FactionListComponent
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule,
+    FlexLayoutModule,
+    MatDialogModule,
+    MatListModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [FactionListComponent, RankListComponent]
 })
 export class AppModule { }

@@ -28,6 +28,13 @@ export class ApiService {
     .then (result => result.items);
   }
 
+  public getFactions(query?: object): Promise<Entry<any>[]> {
+    return this.client.getEntries(Object.assign({
+      content_type: 'faction'
+    }, query))
+    .then (result => result.items);
+  }
+
   public getUnit(unitId): Promise<Entry<any>> {
     return this.client.getEntries(Object.assign({
       content_type: 'unit'

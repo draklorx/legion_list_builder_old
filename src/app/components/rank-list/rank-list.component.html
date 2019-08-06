@@ -1,0 +1,9 @@
+<div class="list">
+    <h3 mat-dialog-title>Rank:</h3>
+    <div mat-dialog-actions>
+        <button mat-button tabindex="-1" class="choice" *ngFor="let rank of ranks" (click)="addUnit(rank.fields.name)">
+        <img src="{{ rank.fields.symbolImage.fields.file.url }}" class="symbol">
+        <h4>{{ rank.fields.name }}</h4>
+        </button>
+    </div> 
+</div>

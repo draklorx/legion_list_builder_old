@@ -1,6 +1,10 @@
-<header class="app">
-    <h1>Lists</h1>
-    <button class="add" (click)="addList()">+</button>    
+<header class="legion-header" fxLayout="row">
+    <h1 class="mat-display-1" fxFlex="80%">Lists</h1>
+    <div fxFlex="20%" class="actions">
+        <button mat-mini-fab aria-label="Add new list" color="primary" (click)="chooseFaction()">
+            <mat-icon>add</mat-icon>
+        </button>    
+    </div>
 </header>
 
 <section class="list" *ngFor="let list of lists; index as listId">

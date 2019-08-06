@@ -4,6 +4,8 @@ import { lists } from '../../lists';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../../services/api.service';
 import { Entry } from 'contentful';
+import { MatDialog } from '@angular/material';
+import { RankListComponent } from '../rank-list/rank-list.component';
 
 @Component({
   selector: 'app-list-detail',
@@ -15,7 +17,10 @@ export class ListDetailComponent implements OnInit {
   units: Entry<any>[] = [];
   ranks: Entry<any>[] = [];
 
-  constructor(private route: ActivatedRoute, private apiService: ApiService) { }
+  constructor(
+    private dialog: MatDialog,
+    private route: ActivatedRoute,
+    private apiService: ApiService) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
@@ -27,8 +32,8 @@ export class ListDetailComponent implements OnInit {
     this.apiService.getRanks().then(ranks => this.ranks = ranks);
   }
 
-  public addUnit(rank) {
-    console.log(rank);
+  chooseRank() {
+    const dialogRef = this.dialog.open(RankListComponent);
   }
 
 }
