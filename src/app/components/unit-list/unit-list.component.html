@@ -1,1 +1,7 @@
-<p>unit-list works!</p>
+<div class="list">
+    <div mat-dialog-actions>
+        <button mat-button tabindex="-1" class="choice" *ngFor="let unit of units" (click)="addUnit(unit.fields.name)">
+        <img src="{{ unit.fields.cardImageFront.fields.file.url }}" class="card">
+        </button>
+    </div> 
+</div>

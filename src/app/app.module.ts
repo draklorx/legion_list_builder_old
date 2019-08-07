@@ -39,6 +39,10 @@ import { RankListComponent } from './components/rank-list/rank-list.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [FactionListComponent, RankListComponent]
+  entryComponents: [
+    FactionListComponent, 
+    RankListComponent,
+    UnitListComponent
+  ]
 })
 export class AppModule { }
